@@ -8,9 +8,8 @@
 
 from itemadapter import ItemAdapter
 
-
 class YgdyPipeline:
     def process_item(self, item, spider):
-        with open('tmp/yg.txt', 'a', encoding='utf-8') as f:
-            f.write(item['name'] + ',' + item['source'] + '\n')
+        with open('tmp/yg.txt', 'a', encoding='UTF-8', errors='ignore') as f:
+            f.write(str(item) + ',\n')
         return item
